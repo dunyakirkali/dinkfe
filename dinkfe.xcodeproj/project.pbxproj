@@ -12,6 +12,7 @@
 		05C670462087F38C0064D64D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C670442087F38B0064D64D /* Main.storyboard */; };
 		05C670482087F38D0064D64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C670472087F38D0064D64D /* Assets.xcassets */; };
 		05C6704B2087F38D0064D64D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C670492087F38D0064D64D /* LaunchScreen.storyboard */; };
+		831E918E861ED26F6BEC55B5 /* Pods_dinkfe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D04BAC0011255F8A97EFD5 /* Pods_dinkfe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		05C670472087F38D0064D64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05C6704A2087F38D0064D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05C6704C2087F38D0064D64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524B4BCBD2613CC405098F42 /* Pods-dinkfe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dinkfe.release.xcconfig"; path = "Pods/Target Support Files/Pods-dinkfe/Pods-dinkfe.release.xcconfig"; sourceTree = "<group>"; };
+		C2D04BAC0011255F8A97EFD5 /* Pods_dinkfe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dinkfe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D440709F0C2B3C421C47EC95 /* Pods-dinkfe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dinkfe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dinkfe/Pods-dinkfe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831E918E861ED26F6BEC55B5 /* Pods_dinkfe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				05C6703F2087F38B0064D64D /* dinkfe */,
 				05C6703E2087F38B0064D64D /* Products */,
+				6246460744B4AA7739B4C477 /* Pods */,
+				FDDE7EB9137502242EE5EB3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = dinkfe;
 			sourceTree = "<group>";
 		};
+		6246460744B4AA7739B4C477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D440709F0C2B3C421C47EC95 /* Pods-dinkfe.debug.xcconfig */,
+				524B4BCBD2613CC405098F42 /* Pods-dinkfe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDDE7EB9137502242EE5EB3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2D04BAC0011255F8A97EFD5 /* Pods_dinkfe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05C6704F2087F38D0064D64D /* Build configuration list for PBXNativeTarget "dinkfe" */;
 			buildPhases = (
+				23036AF56608C31B5990CD53 /* [CP] Check Pods Manifest.lock */,
 				05C670392087F38B0064D64D /* Sources */,
 				05C6703A2087F38B0064D64D /* Frameworks */,
 				05C6703B2087F38B0064D64D /* Resources */,
+				4334C948FFF8C323EFFC5877 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23036AF56608C31B5990CD53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dinkfe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4334C948FFF8C323EFFC5877 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-dinkfe/Pods-dinkfe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-dinkfe/Pods-dinkfe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05C670392087F38B0064D64D /* Sources */ = {
@@ -278,15 +347,13 @@
 		};
 		05C670502087F38D0064D64D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D440709F0C2B3C421C47EC95 /* Pods-dinkfe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FBY22AJDG;
 				INFOPLIST_FILE = dinkfe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.dinkfe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +363,13 @@
 		};
 		05C670512087F38D0064D64D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524B4BCBD2613CC405098F42 /* Pods-dinkfe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FBY22AJDG;
 				INFOPLIST_FILE = dinkfe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.dinkfe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
